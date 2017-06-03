@@ -58,6 +58,14 @@ export default {
          },
          changePlayer() {
              this.activePlayer = this.nonActivePlayer;
+         },
+         changeGameStatus() {
+             if (this.checkForWin()) {
+                 return this.gameIsWon();
+             } else if (this.moves === 9){
+                 return 'draw';
+             }
+             return 'turn';
          }
      },
 
