@@ -69,6 +69,19 @@ export default {
                  return 'draw';
              }
              return 'turn';
+         },
+         checkForWin() {
+             for (let index = 0; index < this.winConditions.length; index++) {
+                 let wc = this.winConditions[index];
+                 let cells = this.cells;
+
+                 //compare the wc winconditions with the actual winconitions
+                 if (this.areEqual(cells[wc[0]],cells[wc[1]],cells[wc[2]])) {
+                     return true;
+                 }
+             }
+
+             return false;
          }
      },
 
