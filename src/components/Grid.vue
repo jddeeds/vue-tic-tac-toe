@@ -55,6 +55,9 @@ export default {
                  this.gameStatus = this.changeGameStatus();
                  this.changePlayer();
              })
+         },
+         changePlayer() {
+             this.activePlayer = this.nonActivePlayer;
          }
      },
 
