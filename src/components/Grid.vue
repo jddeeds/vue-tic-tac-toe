@@ -56,6 +56,15 @@ export default {
                  this.changePlayer();
              })
          }
+     },
+
+     computed: {
+         nonActivePlayer() {
+             if (this.activePlayer === 'O') {
+                 return 'X';
+             }
+             return 'O';
+         }
      }
 }
 </script>
