@@ -76,6 +76,22 @@ export default {
              }
              return 'O';
          }
+     },
+
+     watch: {
+         gameStatus() {
+             if (this.gameStatus === 'win') {
+                 this.gameStatusColor = 'statusWin';
+                 this.gameStatusMessage = `${this.activePlayer} Wins!`;
+                 return
+             } else if (this.gameStatus === 'draw') {
+                this.gameStatusColor = 'statusDraw';
+                this.gameStatusMessage = "Draw!"
+                return
+             }
+
+             this.gameStatusMessage = `${this.activePlayer}'s turn`
+         }
      }
 }
 </script>
