@@ -48,7 +48,14 @@ export default {
                 Event.$emit('strike', this.name);
             }
          },
-         
+         created() {
+             Event.$on('strike', (cellNumber) => {
+                 this.cells[cellNumber] = this.activePlayer;
+                 this.moves++;
+                 this.gameStatus = this.changeGameStatus();
+                 this.changePlayer();
+             })
+         }
      }
 }
 </script>
