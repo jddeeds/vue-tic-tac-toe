@@ -1,4 +1,7 @@
 <template>
+    <div class="gameStatus" :class="gameStatusColor">
+        {{ gameStatusMessage }}
+    </div>
     <table class="grid">
         <tr>
             <cell name="1"></cell>
