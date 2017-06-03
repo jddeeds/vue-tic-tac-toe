@@ -38,6 +38,17 @@ export default {
                 [1, 5, 9], [3, 5, 7]             // diagonals
             ]
         }
+     },
+
+     methods: {
+         strike() {
+            if (!this.frozen) {
+                this.mark = this.$parent.activePlayer;
+                this.frozen = true;
+                Event.$emit('strike', this.name);
+            }
+         },
+         
      }
 }
 </script>
