@@ -89,6 +89,12 @@ export default {
                     return false;
              }
              return true;
+         },
+         gameIsWon() {
+             Event.$emit('win', this.activePlayer);
+             this.gameStatusMessage = `${this.activePlayer} Wins !`;
+             Event.$emit('freeze');
+             return 'win';
          }
      },
 
