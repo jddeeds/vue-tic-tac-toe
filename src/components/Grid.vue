@@ -71,7 +71,7 @@ export default {
              } else if (this.moves === 9){
                  return 'draw';
              }
-             return 'turn';
+             return `${this.activePlayer}'s turn`;
          },
          checkForWin() {
              for (let index = 0; index < this.winConditions.length; index++) {
@@ -123,6 +123,7 @@ export default {
              }
 
              this.gameStatusMessage = `${this.activePlayer}'s turn`
+             
          }
      }
 }
