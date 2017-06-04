@@ -1,5 +1,5 @@
 <template>
-  <td class="cell" @click="strike">{{ mark }}</td>
+    <td class="cell" @click="strike">{{ mark }}</td>
 </template>
 
 <script>
@@ -14,20 +14,22 @@ export default {
     methods: {
         strike() {
             if (!this.frozen) {
-                this.mark = this.$parent.activePlayer;
-                this.frozen = true;
-                Event.$emit('strike', this.name);
+                this.mark = this.$parent.activePlayer
+                this.frozen = true
+                Event.$emit('strike', this.name)
             }
         }
     },
-        created() {
-            Event.$on('clearCell', () => {
-                this.mark = '';
-                this.frozen = false;
-            })
-            Event.$on('freeze', () => this.frozen = true);
-        }
+
+    created() {
+        Event.$on('clearCell', () => {
+            this.mark = ''
+
+            this.frozen = false
+        })
+        Event.$on('freeze', () => this.frozen = true)
     }
+}
 </script>
 
 <style>
@@ -36,6 +38,7 @@ export default {
     height: 90px;
     border: 6px solid #2c3e50;
     font-size: 3.5em;
+    font-family: 'Gochi Hand', sans-serif;
 }
 
 .cell:hover {
@@ -64,6 +67,4 @@ export default {
 tr:nth-of-type(3) .cell {
     border-bottom-color: transparent;
 }
-
-
 </style>
