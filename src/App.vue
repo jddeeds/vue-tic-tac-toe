@@ -7,6 +7,7 @@
   <div id="app">
     <div id="details">
       <h1>Tic Tac Toe</h1>
+      <h2>Match #{{ matches + 1 }}</h2>
     </div>
     <grid></grid>
     <button class="restart" @click="restart">Restart</button>
