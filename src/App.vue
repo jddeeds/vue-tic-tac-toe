@@ -15,6 +15,10 @@
 </template>
 
 <script>
+import Grid from './components/Grid.vue';
+import Cell from './components/Cell.vue';
+import Board from './components/Board.vue';
+
 export default {
   name: 'app',
   data () {
