@@ -82,6 +82,13 @@ export default {
              }
 
              return false;
+         },
+         areEqual() {
+             for (var index = 0; index < arguments.length; index++) {
+                 if(arguments[index] === '' || arguments[index] !== arguments[index - 1])
+                    return false;
+             }
+             return true;
          }
      },
 
