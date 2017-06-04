@@ -20,6 +20,7 @@ import Cell from './components/Cell.vue';
 import Board from './components/Board.vue';
 
 export default {
+  components: { Grid }, 
   name: 'app',
   data () {
     return {
