@@ -57,7 +57,10 @@ export default {
                  this.moves++;
                  this.gameStatus = this.changeGameStatus();
                  this.changePlayer();
-             })
+             }),
+             Event.$on('gridReset', () => {
+                     Object.assign(this.$data, this.$options.data())
+                 })
          },
          changePlayer() {
              this.activePlayer = this.nonActivePlayer;
