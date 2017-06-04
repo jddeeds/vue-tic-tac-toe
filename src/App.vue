@@ -17,13 +17,12 @@
 </template>
 
 <script>
-import Grid from './components/Grid.vue';
-import Cell from './components/Cell.vue';
+import Grid from './components/Grid.vue'
 
 export default {
-  components: { Grid }, 
+  components: { Grid },
   name: 'app',
-  data () {
+  data() {
     return {
       matches: 0,
       wins: {
@@ -32,29 +31,31 @@ export default {
       }
     }
   },
+
   methods: {
-    created() {
-      Event.$on('win', winner => this.wins[winner]++)
-    },
     restart() {
-      Event.$emit('clearCell');
-      Event.$emit('gridReset');
-      this.matches++;
+      Event.$emit('clearCell')
+
+      Event.$emit('gridReset')
+
+      this.matches++
     }
+  },
+
+  created() {
+    Event.$on('win', winner => this.wins[winner]++)
   }
 }
 </script>
 
 <style>
 body {
-  font-family:-apple-system, BlinkMacSystemFont,
-  "Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans",
-  "Helvetica Neue",sans-serif;
+  background-color: #fff;
+  color: #fff;
+  font-family: 'Dosis', Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #fff;
-  background-color: #fff;
   margin: 0px;
 }
 
@@ -65,8 +66,8 @@ body {
 }
 
 h1 {
-  font-weight: bold;
   text-transform: uppercase;
+  font-weight: bold;
   font-size: 3em;
 }
 
@@ -76,6 +77,7 @@ h1 {
   border: 0px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+  font-family: 'Dosis', Helvetica, sans-serif;
   font-size: 1.4em;
   font-weight: bold;
   margin: 0px;
@@ -111,5 +113,4 @@ h1 {
   font-weight: bold;
   margin-left: 20px;
 }
-
 </style>
